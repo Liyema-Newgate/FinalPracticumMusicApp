@@ -1,0 +1,15 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText android:id="@+id/songInput" android:hint="Item name" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <EditText android:id="@+id/artistInput" android:hint="Category" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <EditText android:id="@+id/ratingInput" android:hint="Quantity" android:inputType="number" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <EditText android:id="@+id/commentInput" android:hint="Comment" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <Button android:id="@+id/addButton" android:text="Add to Packing List" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <Button android:id="@+id/viewMusicButton" android:text="View Packing List" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <Button android:id="@+id/exitButton" android:text="Exit" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>
