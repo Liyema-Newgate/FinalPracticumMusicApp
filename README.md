@@ -9,6 +9,7 @@ You will find i have achieved this in my code using parallel arrays and loops.
 
 
 Code Link:
+https://github.com/Liyema-Newgate/FinalPracticumMusicApp 
 
 
 Images of app and Code: 
