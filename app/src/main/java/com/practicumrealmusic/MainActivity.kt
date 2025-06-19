@@ -6,11 +6,12 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
+
 class MainActivity : AppCompatActivity() {
 
-    // Parallel arrays storing initial data of artists,song names etc
+    // Parallel arrays storing initial data of artists,song names etc in 4 parallel arrays
     private val songNames = mutableListOf("Backdoor", "Luther", "Pillars", "Free the Frail")
-    private val artists = mutableListOf("PlayboiCarti", "Kendrick ", "Navy Blue", "Jpegmafia")
+    private val artists = mutableListOf("Playboicarti", "Kendrick ", "Navy Blue", "Jpegmafia")
     private val ratings = mutableListOf(4, 1, 2, 3)
     private val comments = mutableListOf(
         "Good Rap Song ",
@@ -19,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         "Calm Vibe Song"
     )
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             val artist = artistInput.text.toString()
             val ratingText = ratingInput.text.toString()
             val comment = commentInput.text.toString()
-
+//following is to error handle and display the error messages
             if (song.isBlank() || artist.isBlank() || ratingText.isBlank() || comment.isBlank()) {
                 Toast.makeText(this, "All fields are required.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -55,13 +55,13 @@ class MainActivity : AppCompatActivity() {
             ratings.add(quantity)
             comments.add(comment)
 
-            Toast.makeText(this, "Item added successfully.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Song added successfully.", Toast.LENGTH_SHORT).show()
             songInput.text.clear()
             artistInput.text.clear()
             ratingInput.text.clear()
             commentInput.text.clear()
         }
-
+//button to click that launches the 2nd class
         viewMusicButton.setOnClickListener {
             val intent = Intent(this, MusicView::class.java)
             intent.putStringArrayListExtra("Songs", ArrayList(songNames))
