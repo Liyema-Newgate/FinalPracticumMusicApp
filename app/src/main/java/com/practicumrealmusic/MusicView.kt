@@ -1,5 +1,5 @@
 package com.practicumrealmusic
-
+//this class is for screen two and viewing the songs and
 import android.content.Intent
 import android.os.Bundle
 import android.widget.*
@@ -10,22 +10,23 @@ class MusicView : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_music_view)
 
-        val SongListView: ListView = findViewById(R.id.listView)
+        val songListView: ListView = findViewById(R.id.listView)
         val backButton: Button = findViewById(R.id.backButton)
 
-        val items = intent.getStringArrayListExtra("items") ?: arrayListOf()
-        val categories = intent.getStringArrayListExtra("categories") ?: arrayListOf()
-        val quantities = intent.getIntegerArrayListExtra("quantities") ?: arrayListOf()
+        val songNames = intent.getStringArrayListExtra("SongsNames") ?: arrayListOf()
+        val artists = intent.getStringArrayListExtra("Artists") ?: arrayListOf()
+        val ratings = intent.getIntegerArrayListExtra("Ratings") ?: arrayListOf()
         val comments = intent.getStringArrayListExtra("comments") ?: arrayListOf()
-
+//will display all songs equal to or above a 1 rating. easy way to list everything
         val filteredList = mutableListOf<String>()
-        for (i in items.indices) {
-            if (quantities[i] >= 2) filteredList.add("${items[i]} (${categories[i]}, Qty: ${quantities[i]})\\nNote: ${comments[i]}\")
+        for (i in ratings.indices) {
+            if (ratings[i] >= 1)
+                filteredList.add("${songNames[i]} (${artists[i]}, Qty: ${ratings[i]})\\nNote: ${comments[i]}\"")
         }
 
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, filteredList)
-        SongListView.adapter = adapter
-
+        songListView.adapter = adapter
+//back button to return to screen 1
         backButton.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
