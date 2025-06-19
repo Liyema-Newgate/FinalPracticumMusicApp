@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+//where user inputs the data into fields
         val songInput: EditText = findViewById(R.id.songInput)
         val artistInput: EditText = findViewById(R.id.artistInput)
         val ratingInput: EditText = findViewById(R.id.ratingInput)
